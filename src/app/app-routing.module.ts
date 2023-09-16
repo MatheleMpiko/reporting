@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'reported-item',
+    loadChildren: () => import('./reported-item/reported-item.module').then( m => m.ReportedItemPageModule)
+  },
 ];
 
 @NgModule({
