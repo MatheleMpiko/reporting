@@ -57,7 +57,7 @@ export class HomePage {
               const report: Report = {
                 location: this.location,
                 description: this.description,
-                imageUrl: downloadURL, // Save the downloadURL
+                fileUrl: downloadURL, // Save the downloadURL
               };
                  // Use the ReportingService to save the downloadURL to Firestore
                  this.reportingService.addReport(report)
