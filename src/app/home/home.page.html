@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      File Upload
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- File input -->
+  <ion-item>
+    <ion-label>Select a file to upload</ion-label>
+    <input type="file" (change)="onFileSelected($event)" />
+  </ion-item>
+
+   <!-- Location input -->
+   <ion-item>
+    <ion-label position="floating">Location</ion-label>
+    <ion-input type="text" [(ngModel)]="location"></ion-input>
+  </ion-item>
+
+  <!-- Description input -->
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea [(ngModel)]="description"></ion-textarea>
+  </ion-item>
+
+  <!-- Upload button -->
+  <ion-button expand="full" (click)="uploadFile()" [disabled]="!selectedFile">Upload</ion-button>
+
+  <!-- Progress bar -->
+  <ion-progress-bar [value]="uploadProgress"></ion-progress-bar>
+
+  <!-- Success message -->
+  <ion-label *ngIf="uploadSuccess" color="success">
+    File uploaded successfully!
+  </ion-label>
+
+  <!-- Error message -->
+  <ion-label *ngIf="uploadError" color="danger">
+    {{ uploadErrorMessage }}
+  </ion-label>
+</ion-content>
