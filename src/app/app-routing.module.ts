@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'reported-item',
     loadChildren: () => import('./reported-item/reported-item.module').then( m => m.ReportedItemPageModule)
   },
+  {
+    path: 'admin-dashoard',
+    loadChildren: () => import('./admin-dashoard/admin-dashoard.module').then( m => m.AdminDashoardPageModule)
+  },
 ];
 
 @NgModule({
