@@ -16,7 +16,7 @@ export class ReporttextService {
   }
 
   read_reports() {
-    const booking = [];
+    const report = [];
     return this.firestore.collection(this.collectionName).snapshotChanges();
   }
 

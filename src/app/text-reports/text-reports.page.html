@@ -1,13 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>textReports</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">textReports</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card *ngFor="let item of reportList">
+      <ion-card-header>
+        <ion-card-title>Report: {{item.report}} <br/>Date: {{item.date}}</ion-card-title>
+        <ion-card-title>Category: {{item.category}} <br/>Finish Time: {{item.location}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button >Approve</ion-button>
+        <ion-button color="danger">Reject</ion-button>
+      </ion-card-content>
+  </ion-card>
 </ion-content>
