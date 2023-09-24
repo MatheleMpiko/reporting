@@ -1,45 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      File Upload
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+  <div class="login-container">
+    <ion-avatar>
+      <ion-icon name="profile"></ion-icon>
+    </ion-avatar>
+  <h2>OUR VOICE APP</h2>
+  <form>
+    <ion-item fill="outline" class="input-field">
+      <ion-label position="floating">Email Address</ion-label>
+      <ion-input type="text" id="username" name="username" [(ngModel)]="username" required></ion-input>
+      <ion-icon slot="start" name="mail"></ion-icon>
+    </ion-item>
 
-<ion-content padding>
-
-  <!-- File input -->
-  <ion-item>
-    <ion-label>Select a file to upload</ion-label>
-    <input type="file" (change)="onFileSelected($event)" />
-  </ion-item>
-
-   <!-- Location input -->
-   <ion-item>
-    <ion-label position="floating">Location</ion-label>
-    <ion-input type="text" [(ngModel)]="location"></ion-input>
-  </ion-item>
-
-  <!-- Description input -->
-  <ion-item>
-    <ion-label position="floating">Description</ion-label>
-    <ion-textarea [(ngModel)]="description"></ion-textarea>
-  </ion-item>
-
-  <!-- Upload button -->
-  <ion-button expand="full" (click)="uploadFile()" [disabled]="!selectedFile">Upload</ion-button>
-  <ion-button expand="full" href="/reported-item">Reported List</ion-button>
-
-  <!-- Progress bar -->
-  <ion-progress-bar [value]="uploadProgress"></ion-progress-bar>
-
-  <!-- Success message -->
-  <ion-label *ngIf="uploadSuccess" color="success">
-    File uploaded successfully!
-  </ion-label>
-
-  <!-- Error message -->
-  <ion-label *ngIf="uploadError" color="danger">
-    {{ uploadErrorMessage }}
-  </ion-label>
+    <ion-item fill="outline" class="input-field">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" id="password" name="password" [(ngModel)]="password" required></ion-input>
+      <ion-icon slot="start" name="lock-closed"></ion-icon>
+    </ion-item>
+    <a href="/user-dashboard" class="forgot-password">Forgot Password?</a>
+    <ion-button id="open-loading" expand="full" class="login-button" routerLink="/admin-dashoard">Log In</ion-button>
+    <ion-loading trigger="open-loading" message="Loading..." duration="3000"></ion-loading>
+    <a href="/register" class="register">Click here to Register</a>
+    <a href="/user-dashboard" class="register">Report Anonymously</a>
+  </form>
+</div>
 </ion-content>

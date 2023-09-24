@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { TextReportsPageRoutingModule } from './text-reports-routing.module';
 
-import { Tab1Page } from './tab1.page';
+import { TextReportsPage } from './text-reports.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
-    Tab1PageRoutingModule
+    TextReportsPageRoutingModule
   ],
-  declarations: [Tab1Page]
+  declarations: [TextReportsPage]
 })
-export class Tab1PageModule {}
+export class TextReportsPageModule {}

@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { UserDashboardPageRoutingModule } from './user-dashboard-routing.module';
 
-import { Tab1Page } from './tab1.page';
+import { UserDashboardPage } from './user-dashboard.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
-    Tab1PageRoutingModule
+    UserDashboardPageRoutingModule
   ],
-  declarations: [Tab1Page]
+  declarations: [UserDashboardPage]
 })
-export class Tab1PageModule {}
+export class UserDashboardPageModule {}
