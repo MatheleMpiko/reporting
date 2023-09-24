@@ -3,14 +3,15 @@
 <ion-content [fullscreen]="true">
 
     <ion-card *ngFor="let item of reportedItems">  
-        <ion-card-header>  
-          <ion-card-subtitle>
-            <img [src]="item.fileUrl" alt="Reported Item Image"  style="height: 100px; width: 90%;" />
-          </ion-card-subtitle>  
-          <ion-card-title>{{ item.location }}</ion-card-title>  
-          </ion-card-header>  
-        <ion-card-content>  
-          {{ item.description }}  
-        </ion-card-content>  
+      <ion-card-header>  
+        <ion-card-subtitle>
+          <img [src]="item.fileUrl" alt="Reported Item Image"  style="height: 100px; width: 90%;" />
+        </ion-card-subtitle>  
+        <ion-card-title>Location: {{ item.location }}<br/>Discription: {{ item.description }}</ion-card-title> 
+        </ion-card-header>  
+      <ion-card-content>
+        <ion-button>Approve</ion-button>
+        <ion-button color="danger">Reject</ion-button>
+      </ion-card-content>  
       </ion-card> 
 </ion-content>
