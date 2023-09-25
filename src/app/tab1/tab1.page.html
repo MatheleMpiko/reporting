@@ -5,9 +5,11 @@
       <ion-title size="large">tab1</ion-title>
     </ion-toolbar>
   </ion-header>
-  <form [formGroup]="reportForm" (ngSubmit)="createReport()">
+  <form [formGroup]="reportForm" (ngSubmit)="createReport()" class="form">
     
-    <ion-item fill="outline" class="input-field">
+    <ion-label class="label" style="margin-top: 50px">Please fill in this form to report incident</ion-label>
+    
+    <ion-item fill="outline" class="input-fields">
       <ion-label position="floating">Incident Description</ion-label>
       <ion-input type="text" formControlName="report"></ion-input>
     </ion-item>

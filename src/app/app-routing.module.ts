@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'text-reports',
     loadChildren: () => import('./text-reports/text-reports.module').then( m => m.TextReportsPageModule)
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
 ];
 
 @NgModule({

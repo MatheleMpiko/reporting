@@ -1,26 +1,30 @@
 <ion-content padding>
 
+  <form class="form">
+
+    <ion-label class="label" style="margin-top: 50px">Please attach evidence to report incident</ion-label>
+
   <!-- File input -->
-  <ion-item>
+  <ion-item class="input-fields">
     <ion-label>Select a file to upload</ion-label>
     <input type="file" (change)="onFileSelected($event)" />
   </ion-item>
 
    <!-- Location input -->
-   <ion-item>
+   <ion-item class="input-field" fill="outline">
     <ion-label position="floating">Location</ion-label>
     <ion-input type="text" [(ngModel)]="location"></ion-input>
   </ion-item>
 
   <!-- Description input -->
-  <ion-item>
+  <ion-item class="input-field" fill="outline">
     <ion-label position="floating">Description</ion-label>
     <ion-textarea [(ngModel)]="description"></ion-textarea>
   </ion-item>
 
   <!-- Upload button -->
-  <ion-button expand="full" (click)="uploadFile()" [disabled]="!selectedFile">Upload</ion-button>
-  <ion-button expand="full" href="/reported-item">Reported List</ion-button>
+  <ion-button expand="full" (click)="uploadFile()" [disabled]="!selectedFile" class="input-field">Upload</ion-button>
+  <!-- <ion-button expand="full" href="/reported-item" class="input-field">Reported List</ion-button> -->
 
   <!-- Progress bar -->
   <ion-progress-bar [value]="uploadProgress"></ion-progress-bar>
@@ -34,4 +38,5 @@
   <ion-label *ngIf="uploadError" color="danger">
     {{ uploadErrorMessage }}
   </ion-label>
+</form>
 </ion-content>
