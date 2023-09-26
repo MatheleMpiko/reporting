@@ -2,11 +2,10 @@
   <ion-card *ngFor="let item of reportList">
       <ion-card-header>
         <ion-card-title>Report: {{item.report}} <br/>Date: {{item.date}}</ion-card-title>
-        <ion-card-title>Category: {{item.category}} <br/>Finish Time: {{item.location}}</ion-card-title>
+        <ion-card-title>Category: {{item.category}} <br/>Location: {{item.location}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-button >Approve</ion-button>
-        <ion-button color="danger">Reject</ion-button>
       </ion-card-content>
   </ion-card>
 </ion-content>
