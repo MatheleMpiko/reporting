@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="medium">
+    <ion-title>awareness</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="awarenessForm" (ngSubmit)="raiseAwareness()" class="form">
+    
+    <ion-label class="label" style="margin-top: 50px">Please fill in this form to raise human traffiking Awareness</ion-label>
+  <ion-item class="input-field" fill="outline">
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea formControlName="discription"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-button (click)="raiseAwareness()" [disabled]="awarenessForm.invalid">
+      <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+      &nbsp;Raise Awareness
+    </ion-button>
+  </ion-item>
+  </form>
+</ion-content>

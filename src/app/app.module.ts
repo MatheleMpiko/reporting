@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -27,6 +28,7 @@ import { NativeGeocoder} from '@ionic-native/native-geocoder/ngx';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    ReactiveFormsModule,
     AngularFireDatabaseModule,
     AppRoutingModule],
   providers: [StatusBar,  

@@ -51,6 +51,26 @@ const routes: Routes = [
     path: 'geolocation',
     loadChildren: () => import('./geolocation/geolocation.module').then( m => m.GeolocationPageModule)
   },
+  {
+    path: 'awareness',
+    loadChildren: () => import('./awareness/awareness.module').then( m => m.AwarenessPageModule)
+  },
+  {
+    path: 'user-awareness',
+    loadChildren: () => import('./user-awareness/user-awareness.module').then( m => m.UserAwarenessPageModule)
+  },
+  {
+    path: 'spot-signs',
+    loadChildren: () => import('./spot-signs/spot-signs.module').then( m => m.SpotSignsPageModule)
+  },
+  {
+    path: 'privacy',
+    loadChildren: () => import('./privacy/privacy.module').then( m => m.PrivacyPageModule)
+  },
+  {
+    path: 'safety',
+    loadChildren: () => import('./safety/safety.module').then( m => m.SafetyPageModule)
+  },
 ];
 
 @NgModule({
