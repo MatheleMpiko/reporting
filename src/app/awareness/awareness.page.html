@@ -1,9 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="medium">
-    <ion-title>awareness</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
+    <ion-title style="text-align: center; margin-right: 50px;">Awareness</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,7 @@
     <ion-textarea formControlName="discription"></ion-textarea>
   </ion-item>
 
-  <ion-button style="height: 42px; margin-top: 20px;" (click)="raiseAwareness()" [disabled]="awarenessForm.invalid" expand="block">create report</ion-button>
+  <ion-button style="height: 42px; margin-top: 20px;" (click)="raiseAwareness()" [disabled]="awarenessForm.invalid" expand="block">Submit</ion-button>
 
   <!-- <ion-item>
     <ion-button (click)="raiseAwareness()" [disabled]="awarenessForm.invalid">

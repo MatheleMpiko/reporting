@@ -1,30 +1,13 @@
 <ion-app>
-  <ion-menu contentId="main-content">
-    <ion-header>
-      <ion-toolbar color="medium">
-        <ion-title>List of Items</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-
-      <ion-item href="/home">
-        <ion-label>View Profile</ion-label>
-      </ion-item>
-
-      <ion-item href="/home">
-        <ion-label>Logout</ion-label>
-      </ion-item>
-
-    </ion-content>
-  </ion-menu>
-
   <div class="ion-page" id="main-content">
     <ion-header>
       <ion-toolbar color="medium">
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
+        <ion-buttons slot="end">
+          <ion-button routerLink="/admin-profile">
+            <ion-icon name="person-sharp" style="color: white"></ion-icon>
+          </ion-button>
         </ion-buttons>
-        <ion-title>Admin Dashboard</ion-title>
+        <ion-title style="text-align: start;">Admin Dashboard</ion-title>
       </ion-toolbar>
     </ion-header>
 
