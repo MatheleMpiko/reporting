@@ -16,11 +16,13 @@
     <ion-textarea formControlName="discription"></ion-textarea>
   </ion-item>
 
-  <ion-item>
+  <ion-button style="height: 42px; margin-top: 20px;" (click)="raiseAwareness()" [disabled]="awarenessForm.invalid" expand="block">create report</ion-button>
+
+  <!-- <ion-item>
     <ion-button (click)="raiseAwareness()" [disabled]="awarenessForm.invalid">
       <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
       &nbsp;Raise Awareness
     </ion-button>
-  </ion-item>
+  </ion-item> -->
   </form>
 </ion-content>

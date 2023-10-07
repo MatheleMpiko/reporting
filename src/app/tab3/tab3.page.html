@@ -1,4 +1,4 @@
-<ion-content class="ion-padding">
+<!-- <ion-content class="ion-padding">
   <ion-item href="/awareness">
     <ion-label>Raise Awareness</ion-label>
   </ion-item>
@@ -18,5 +18,32 @@
   <ion-item href="#">
     <ion-label>Language</ion-label>
   </ion-item>
+
+</ion-content> -->
+
+
+<ion-content>
+  <ion-list style="margin-top: 10%;">
+    <ion-item routerLink="/awareness" class="item">
+        <ion-icon slot="start" name="add-circle-sharp" style="color: #6c8be0;"></ion-icon>
+        <ion-title style="font-size: 17px;">Raise Awareness</ion-title>
+        <ion-icon name="chevron-forward-sharp"></ion-icon>
+    </ion-item>
+    <ion-item routerLink="/awareness">
+      <ion-icon slot="start" name="list-sharp" style="color: #6c8be0;"></ion-icon>
+      <ion-title style="font-size: 17px;">Spot the signs</ion-title>
+      <ion-icon name="chevron-forward-sharp"></ion-icon>
+  </ion-item>
+    <ion-item routerLink="/awareness">
+        <ion-icon slot="start" name="mail-sharp" style="color: #6c8be0;"></ion-icon>
+        <ion-title style="font-size: 17px;">Messages</ion-title>
+        <ion-icon slot="end" name="chevron-forward-sharp"></ion-icon>
+    </ion-item>
+    <ion-item routerLink="/faculty-profile" style="height: 48px;">
+        <ion-icon slot="start" name="person-sharp" style="color: #6c8be0;"></ion-icon>
+        <ion-title style="font-size: 17px;">Logout</ion-title>
+        <ion-icon name="chevron-forward-sharp"></ion-icon>
+    </ion-item>
+</ion-list>
 
 </ion-content>

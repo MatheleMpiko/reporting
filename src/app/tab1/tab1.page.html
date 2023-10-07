@@ -37,12 +37,14 @@
       </ion-button>
     </ion-item>
 
-    <ion-item>
-      <ion-button (click)="createReport()" [disabled]="reportForm.invalid">
+    <!-- <ion-item>
+      <ion-button (click)="createReport()" [disabled]="reportForm.invalid" expand="block">
         <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
         &nbsp;Create Report
       </ion-button>
-    </ion-item>
+    </ion-item> -->
+
+    <ion-button style="height: 42px; margin-top: 20px;" (click)="createReport()" [disabled]="reportForm.invalid" expand="block">create report</ion-button>
   </form>
 
 </ion-content>
