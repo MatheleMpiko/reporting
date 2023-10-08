@@ -13,38 +13,39 @@
   
   <div class="login-container">
   <h2 style="margin-top: 50px" class="label">OUR VOICE APP</h2>
-  <form>
+  <form [formGroup]="registerForm" (ngSubmit)="register(Email.value, Password.value)">
+    
     <ion-item fill="outline" class="input-field">
       <ion-label position="floating">Username</ion-label>
-      <ion-input type="text" id="username" name="username" [(ngModel)]="username" required></ion-input>
+      <ion-input type="text" formControlName="UserName" required></ion-input>
       <ion-icon slot="start" name="person"></ion-icon>
     </ion-item>
 
     <ion-item fill="outline" class="input-field">
       <ion-label position="floating">Email Address</ion-label>
-      <ion-input type="email" id="email" name="email" [(ngModel)]="email" required></ion-input>
+      <ion-input type="email" formControlName="Email" #Email required></ion-input>
       <ion-icon slot="start" name="mail"></ion-icon>
     </ion-item>
 
     <ion-item fill="outline" class="input-field">
       <ion-label position="floating">Contacts</ion-label>
-      <ion-input type="contact" id="contact" name="contact" [(ngModel)]="contact" required></ion-input>
+      <ion-input type="contact" formControlName="Phone" required></ion-input>
       <ion-icon slot="start" name="call"></ion-icon>
     </ion-item>
 
     <ion-item fill="outline" class="input-field">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" id="password" name="password" [(ngModel)]="password" required></ion-input>
+      <ion-input type="password" formControlName="Password" #Password required></ion-input>
       <ion-icon slot="start" name="lock-closed"></ion-icon>
     </ion-item>
 
     <ion-item fill="outline" class="input-field">
       <ion-label position="floating">Confirm Password</ion-label>
-      <ion-input type="password" id="password" name="password" [(ngModel)]="password" required></ion-input>
+      <ion-input type="password"  required></ion-input>
       <ion-icon slot="start" name="lock-closed"></ion-icon>
     </ion-item>
 
-    <ion-button id="open-loading" expand="full" class="login-button" (click)="login()">Register</ion-button>
+    <ion-button id="open-loading" expand="full" class="login-button" type="submit">Register</ion-button>
     <ion-loading trigger="open-loading" message="Loading..." duration="3000"></ion-loading>
       <a href="/home" class="forgot-password">Back to Login Page</a>
   </form>

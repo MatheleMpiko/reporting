@@ -5,21 +5,25 @@
       <img src="assets/logo1.jpg">
     </ion-avatar>
   <h2>OUR VOICE APP</h2>
-  <form>
+
+  <form [formGroup]="registerForm" (ngSubmit)="login(Email.value, Password.value)">
     <ion-item fill="outline" class="input-field">
       <ion-label position="floating">Email Address</ion-label>
-      <ion-input type="text" id="username" name="username" [(ngModel)]="username" required></ion-input>
+      <ion-input formControlName="Email" #Email required></ion-input>
       <ion-icon slot="start" name="mail"></ion-icon>
     </ion-item>
 
     <ion-item fill="outline" class="input-field">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" id="password" name="password" [(ngModel)]="password" required></ion-input>
+      <ion-input formControlName="Password" #Password type="password" required></ion-input>
       <ion-icon slot="start" name="lock-closed"></ion-icon>
     </ion-item>
+
     <a href="/user-dashboard" class="forgot-password">Forgot Password?</a>
-    <ion-button id="open-loading" expand="full" class="login-button" routerLink="/admin-dashoard">Log In</ion-button>
+
+    <ion-button id="open-loading" expand="full" class="login-button" type="submit">LogIn</ion-button>
     <ion-loading trigger="open-loading" message="Loading..." duration="3000"></ion-loading>
+
     <a href="/register" class="register">Click here to Register</a>
     <a href="/user-dashboard" class="register">Report Anonymously</a>
   </form>
