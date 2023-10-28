@@ -25,6 +25,16 @@ const routes: Routes = [
         import('../text-reports/text-reports.module').then((m) => m.TextReportsPageModule),
     },
     {
+      path: 'video',
+      loadChildren: () =>
+        import('../video/video.module').then((m) => m.VideoPageModule),
+    },
+    {
+      path: 'audio',
+      loadChildren: () =>
+        import('../audio/audio.module').then((m) => m.AudioPageModule),
+    },
+    {
       path: '',
       redirectTo: '/admin-dashoard/tab3',
       pathMatch: 'full',

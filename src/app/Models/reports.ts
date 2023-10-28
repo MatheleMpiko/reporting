@@ -1,7 +1,7 @@
-export default interface Report {
+export interface Reports {
     id ?: string;
     location : string;
     description : string;
     fileUrl : string;
-    fileType : string;
-  }
+    type?: string; // Add the 'type' property
+}

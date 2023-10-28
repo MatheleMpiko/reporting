@@ -3,9 +3,12 @@
   <ion-card *ngFor="let item of reportedItems">
     <ion-card-header>
       <ion-card-subtitle>
-        <ng-container *ngIf="item.fileType.startsWith('image')">
-        <!-- Display media content inside the card based on type -->
-        <img [src]="item.fileUrl" alt="Reported Item Image" style="height: 100px; width: 90%;">
+        <!-- Check the file type and display the video if it's a video file -->
+        <ng-container *ngIf="item.fileType.startsWith('video')">
+          <video width="100%" height="auto" controls>
+            <source [src]="item.fileUrl" [type]="item.fileType">
+            Your browser does not support the video element.
+          </video>
         </ng-container>
       </ion-card-subtitle>
       <ion-card-title>Location: {{ item.location }}<br/>Description: {{ item.description }}</ion-card-title>

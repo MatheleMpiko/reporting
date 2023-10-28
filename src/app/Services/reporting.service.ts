@@ -11,7 +11,7 @@ export class ReportingService {
 
   constructor(private ngFirestore: AngularFirestore, private router: Router) {}
 
-  addReport(report: Report) {
+  addReport(report: any) {
     return this.ngFirestore.collection('reported-cases').add(report); // Change 'Bookings' to 'reported-cases'
   }
 

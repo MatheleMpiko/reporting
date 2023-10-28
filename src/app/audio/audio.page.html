@@ -3,10 +3,11 @@
   <ion-card *ngFor="let item of reportedItems">
     <ion-card-header>
       <ion-card-subtitle>
-        <ng-container *ngIf="item.fileType.startsWith('image')">
         <!-- Display media content inside the card based on type -->
-        <img [src]="item.fileUrl" alt="Reported Item Image" style="height: 100px; width: 90%;">
-        </ng-container>
+          <audio controls>
+            <source [src]="item.fileUrl" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
       </ion-card-subtitle>
       <ion-card-title>Location: {{ item.location }}<br/>Description: {{ item.description }}</ion-card-title>
     </ion-card-header>

@@ -20,8 +20,12 @@
     </ion-item>
 
     <ion-item fill="outline" class="input-field">
-      <ion-label position="floating">Category</ion-label>
-      <ion-input type="text" formControlName="category"></ion-input>
+      <ion-select label="Category" formControlName="category"  label-placement="floating">
+        <ion-select-option value="forced-labour">Forced Labour</ion-select-option>
+        <ion-select-option value="sexual-trafficking">Sex Trafficking</ion-select-option>
+        <ion-select-option value="child-labour">Child Labour</ion-select-option>
+        <ion-select-option value="other">Other</ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item fill="outline" class="input-field">

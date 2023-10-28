@@ -75,6 +75,18 @@ const routes: Routes = [
     path: 'details',
     loadChildren: () => import('./pages/details/details.module').then( m => m.DetailsPageModule)
   },
+  {
+    path: 'audio',
+    loadChildren: () => import('./audio/audio.module').then( m => m.AudioPageModule)
+  },
+  {
+    path: 'video',
+    loadChildren: () => import('./video/video.module').then( m => m.VideoPageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
 ];
 
 @NgModule({

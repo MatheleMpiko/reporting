@@ -10,6 +10,15 @@
     <input type="file" (change)="onFileSelected($event)" />
   </ion-item>
 
+  <!-- Description input -->
+
+  <ion-item fill="outline" class="input-field"> 
+    <ion-select label="File type" [(ngModel)]="fileType"  label-placement="floating">
+      <ion-select-option value="audio">Audio</ion-select-option>
+      <ion-select-option value="image">Image</ion-select-option>
+      <ion-select-option value="video">Video</ion-select-option>
+    </ion-select>
+  </ion-item>
    <!-- Location input -->
    <ion-item class="input-field" fill="outline">
     <ion-label position="floating">Location</ion-label>

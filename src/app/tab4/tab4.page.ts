@@ -18,6 +18,7 @@ export class Tab4Page implements OnInit {
 
   location: string = ''; // Add location property
   description: string = ''; // Add description property
+  fileType: string = '';
 
   constructor(private storage: AngularFireStorage,
     private reportingService: ReportingService,
@@ -56,7 +57,8 @@ export class Tab4Page implements OnInit {
               const report: Report = {
                 location: this.location,
                 description: this.description,
-                fileUrl: downloadURL, // Save the downloadURL
+                fileUrl: downloadURL,
+                fileType: this.fileType
               };
                  // Use the ReportingService to save the downloadURL to Firestore
                  this.reportingService.addReport(report)
