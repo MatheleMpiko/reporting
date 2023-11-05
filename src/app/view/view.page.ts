@@ -83,7 +83,7 @@ export class ViewPage implements OnInit {
       date: bookingRow.Editdate,
       location: bookingRow.Editlocation,
     };
-    window.confirm('Warning: The booking will be updated!');
+    window.confirm('Warning: The incident report will be updated!');
     this.reportService.updateReport(bookingRow.id, booking);
     bookingRow.isEdit = false;
   }

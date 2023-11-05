@@ -56,7 +56,7 @@ export class TextReportsPage implements OnInit {
       [field] : value,
     }).then(() => {
       console.log('Approved');
-      window.alert('Booking Approved')
+      window.alert('Incident report Approved')
     }).catch((error) => {
       console.error('Error when Approving');
     })
