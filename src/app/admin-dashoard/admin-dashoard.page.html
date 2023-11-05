@@ -1,9 +1,26 @@
 <ion-app>
   <div class="ion-page" id="main-content">
+    <ion-app>
+      <ion-menu contentId="main-content">
+        <ion-header>
+          <ion-toolbar color="medium">
+            <ion-title>List of Items</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-item routerLink="/user-awareness">
+            <ion-label>Human Trafficking Awareness</ion-label>
+          </ion-item>
+          <ion-item href="/home">
+            <ion-label>Close</ion-label>
+          </ion-item>
+    
+        </ion-content>
+      </ion-menu>
     <ion-header>
       <ion-toolbar color="medium">
         <ion-buttons slot="end">
-          <ion-button routerLink="/admin-profile">
+          <ion-button routerLink="/tab3">
             <ion-icon name="person-sharp" style="color: white"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -15,11 +32,7 @@
   
 
   <ion-tabs>  
-    <ion-tab-bar slot="top" color="light">  
-      <ion-tab-button tab="tab3">  
-        <ion-icon name="home"></ion-icon>  
-        <ion-label>Dashboard</ion-label>  
-      </ion-tab-button>  
+    <ion-tab-bar slot="top" color="light"> 
       
       <ion-tab-button tab="text-reports">  
         <ion-icon name="list"></ion-icon>  

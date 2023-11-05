@@ -3,11 +3,13 @@
   <ion-card *ngFor="let item of reportedItems">
     <ion-card-header>
       <ion-card-subtitle>
-        <!-- Display media content inside the card based on type -->
-          <audio controls>
-            <source [src]="item.fileUrl" type="audio/mpeg">
-            Your browser does not support the audio element.
+        <!-- Check the file type and display the video if it's a video file -->
+        <ng-container *ngIf="item.fileType.startsWith('audio')">
+          <audio >
+            <source [src]="item.fileUrl" [type]="item.fileType">
+            Your browser does not support the video element.
           </audio>
+        </ng-container>
       </ion-card-subtitle>
       <ion-card-title>Location: {{ item.location }}<br/>Description: {{ item.description }}</ion-card-title>
     </ion-card-header>

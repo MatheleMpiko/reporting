@@ -4,20 +4,21 @@ import { ReporttextService } from '../Services/reporttext.service';
 import { FormBuilder } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { log } from 'console';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-text-reports',
-  templateUrl: './text-reports.page.html',
-  styleUrls: ['./text-reports.page.scss'],
+  selector: 'app-view',
+  templateUrl: './view.page.html',
+  styleUrls: ['./view.page.scss'],
 })
-export class TextReportsPage implements OnInit {
+export class ViewPage implements OnInit {
 
   @Input() booking?: ReportData;
   term: any;
-  id: any;
   reportList: any[] = [
     // Your initial list of items
   ];
+  id: any;
   reportData: ReportData = {
     report: '',
     category: '',
@@ -28,8 +29,9 @@ export class TextReportsPage implements OnInit {
   message = '';
   filteredList: any[];
 
-  constructor(private reportService: ReporttextService, public formBuilder: FormBuilder, private firestore: AngularFirestore) {
+  constructor(private reportService: ReporttextService, private activateRoute: ActivatedRoute, public formBuilder: FormBuilder, private firestore: AngularFirestore) {
     this.filteredList = this.reportList;
+    this.id = this.activateRoute.snapshot.paramMap.get('id');
   }
 
   ngOnInit() {
@@ -51,16 +53,43 @@ export class TextReportsPage implements OnInit {
     });
   }
 
-  updateField(docId: any, field: string, value : boolean){
-    this.firestore.collection('Report').doc(docId).update({
-      [field] : value,
-    }).then(() => {
-      console.log('Approved');
-      window.alert('Booking Approved')
-    }).catch((error) => {
-      console.error('Error when Approving');
-    })
-   }
+  ngOnChanges(): void {
+    this.message = '';
+    this.reportData = { ...this.booking };
+  }
+
+  removeBooking(rowId: any) {
+    console.log(rowId);
+    
+    window.confirm('Warning: The report will be canceled!');
+    this.reportService.delete_report(rowId);
+  }
+
+  editBooking(booking: any) {
+    booking.isEdit = {};
+    booking.Editreport = booking.report;
+    booking.Editcategory = booking.category;
+    booking.Editdate = booking.date;
+    booking.Editlocation = booking.location;
+    // booking.EditBookingStatus = booking.BookingStatus;
+  }
+
+  updateBooking(bookingRow: any) {
+    console.log(bookingRow.id);
+
+    let booking: ReportData = {
+      report: bookingRow.Editreport,
+      category: bookingRow.Editcategory,
+      date: bookingRow.Editdate,
+      location: bookingRow.Editlocation,
+    };
+    window.confirm('Warning: The booking will be updated!');
+    this.reportService.updateReport(bookingRow.id, booking);
+    bookingRow.isEdit = false;
+  }
+
+
+
 
   onSearch(item: any) {
     this.filteredList = this.reportList.filter(item => {

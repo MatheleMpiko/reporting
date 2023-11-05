@@ -16,14 +16,16 @@ export class AudioPage implements OnInit {
   ngOnInit() {
     this.loadReportedItems();
   }
-
   loadReportedItems() {
     this.reportingService.getReports().subscribe((data) => {
-      this.reportedItems = data.map((item) => {
-        const id = item.payload.doc.id;
-        const report = item.payload.doc.data() as Report;
-        return { id, ...report };
-      });
+      // Filter and map video items
+      this.reportedItems = data
+        .map((item) => {
+          const id = item.payload.doc.id;
+          const report = item.payload.doc.data() as Report;
+          return { id, ...report };
+        })
+        .filter((item) => item.fileType && item.fileType.startsWith('audio'));
     });
   }
 }

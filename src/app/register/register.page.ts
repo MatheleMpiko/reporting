@@ -45,6 +45,7 @@ export class RegisterPage implements OnInit {
   createRegistry(){
     console.log(this.registerForm.value);
     this.registerService.create_register(this.registerForm?.value).then(resp => {
+      window.alert('Successfully Registered');
       this.registerForm?.reset();
     })
     .catch(error => {

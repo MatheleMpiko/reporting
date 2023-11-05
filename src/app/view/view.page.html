@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <span *ngIf="reportData">
+  <ion-card *ngFor="let item of reportList">
+    <span *ngIf="!item.isEdit; else elseBlock">
+      <ion-card-header>
+        <ion-card-title>Incident Description:</ion-card-title>
+        <ion-card-subtitle>{{item.report}}</ion-card-subtitle>
+        <ion-card-title>Incident ID:</ion-card-title>
+        <ion-card-subtitle>{{item.id}}</ion-card-subtitle>
+        <ion-card-title>Category:</ion-card-title>
+        <ion-card-subtitle>{{item.category}}</ion-card-subtitle>
+        <ion-card-title>Date:</ion-card-title>
+        <ion-card-subtitle>{{item.date}}</ion-card-subtitle>
+        <ion-card-title>Location:</ion-card-title>
+        <ion-card-subtitle>{{item.location}}</ion-card-subtitle>
+        <ion-card-title>Status: {{ item.approved? "Approved" : "Pending"  }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button shape="round" color="secondary" size="small" (click)="editBooking(item)">
+          <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+
+        </ion-button>
+        <ion-button shape="round" color="danger" size="small" (click)="removeBooking(item.id)">
+          <ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+    </span>
+    <ng-template #elseBlock>
+      <ion-card-header>
+        <ion-card-title>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                Edit
+              </ion-col>
+              <ion-col>
+                <ion-button fill="solid" color="medium" size="small" (click)="item.isEdit = false">
+                  Cancel
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button fill="solid" color="success" size="small" (click)="updateBooking(item)">
+                  Update
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content color="primary">
+        <ion-label><strong>Incident Description: </strong></ion-label><br/>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="item.Editreport"></ion-input>
+        </ion-item>
+        <ion-label><strong>Category: </strong></ion-label><br/>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="item.Editcategory"></ion-input>
+        </ion-item>
+        <ion-label><strong>Date: </strong></ion-label><br/>
+        <ion-item>
+          <ion-input type="date" [(ngModel)]="item.Editdate"></ion-input>
+        </ion-item>
+        <ion-label><strong>Location: </strong></ion-label><br/>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="item.Editlocation"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ng-template>
+  </ion-card>
+</span>
+</ion-content>

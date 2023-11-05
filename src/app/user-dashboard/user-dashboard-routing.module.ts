@@ -21,6 +21,12 @@ const routes: Routes = [
       },
 
       {
+        path: 'view',
+        loadChildren: () =>
+          import('../view/view.module').then((m) => m.ViewPageModule),
+      },
+
+      {
         path: '',
         redirectTo: '/user-dashboard/tab1',
         pathMatch: 'full',

@@ -3,9 +3,11 @@
       <ion-card-header>
         <ion-card-title>Report: {{item.report}} <br/>Date: {{item.date}}</ion-card-title>
         <ion-card-title>Category: {{item.category}} <br/>Location: {{item.location}}</ion-card-title>
+        <ion-card-title>Status: {{ item.approved? "Approved" : "Pending" }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-button >Approve</ion-button>
+        <ion-button (click)="updateField(item.id, 'approved', true)">Approve</ion-button>
+        <ion-button (click)="updateField(item.id, 'approved', false)" color="danger">Reject</ion-button>
       </ion-card-content>
   </ion-card>
 </ion-content>

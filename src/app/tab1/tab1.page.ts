@@ -21,6 +21,7 @@ export class Tab1Page implements OnInit {
       category: ['', [Validators.required]],
       date: ['', [Validators.required]],
       location: ['', [Validators.required]],
+      approved : false,
     })
   }
 

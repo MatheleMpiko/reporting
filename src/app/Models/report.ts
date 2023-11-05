@@ -4,4 +4,5 @@ export default interface Report {
     description : string;
     fileUrl : string;
     fileType : string;
+    approve?: boolean;
   }
